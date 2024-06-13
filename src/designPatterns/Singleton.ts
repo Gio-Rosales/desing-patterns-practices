@@ -1,4 +1,4 @@
-class Singleton {
+export default class Singleton {
   private static instance: Singleton;
   name?: string;
   price?: number;
@@ -16,13 +16,3 @@ class Singleton {
     return Singleton.instance;
   }
 }
-
-
-const singleton = Singleton.getInstance("Gio", 20);
-const singleton2 = Singleton.getInstance("Jaz", 40);
-
-console.log(singleton === singleton2);
-console.log({
-  singleton,
-  singleton2
-})
