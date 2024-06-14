@@ -1,7 +1,7 @@
 import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { setupCounter, observerCounter } from './counter.ts'
 import "./app.ts";
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
@@ -14,7 +14,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </a>
     <h1>Vite + TypeScript</h1>
     <div class="card">
-      <button id="counter" type="button"></button>
+      <p id="counter-text">0</p>
+      <button id="counter" type="button">count is 0</button>
+      <button id="counter-decrease" type="button">count is 0</button>
     </div>
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more
@@ -23,4 +25,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+observerCounter(
+  document.querySelector("#counter-text")!,
+  document.querySelector<HTMLButtonElement>('#counter')!,
+  document.querySelector<HTMLButtonElement>('#counter-decrease')!
+)

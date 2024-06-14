@@ -15,7 +15,7 @@ import { RegularSaleStrategy, SaleContext, PromotionSaleStrategy } from "./desig
 (() => {
   const regularSale = new RegularSaleStrategy(0.20);
   const saleContext = new SaleContext(regularSale);
-  const hotSalePromotion = new PromotionSaleStrategy(.15);
+  const hotSalePromotion = new PromotionSaleStrategy(.2, .15);
   const hotSalePromotionInstance = new SaleContext(hotSalePromotion);
 
   console.log(saleContext.calculate(100));
